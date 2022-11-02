@@ -15,7 +15,9 @@ class Board():
     def __init__(self):
         self.rows = 8
         self.columns = 8
-        self.board = [["X" for i in range(self.columns)] for j in range(self.rows)]
+        self.blank = "."
+        self.board = [[self.blank for i in range(self.columns)] for j in range(self.rows)]
+        self.turn = "Black"
         
     # Prints the current state of the board
     def printBoard(self):
@@ -37,36 +39,42 @@ class Board():
     def isNotFull(self):
         for idx, i in enumerate(self.board):
             for jdx, j in enumerate(i):
-                if j == "X":
+                if j == self.blank:
                     return True
                 else:
                     continue
         return False
 
     # Place the users piece on the board
-    def placePiece(self, color, position):
-        i = int(position[0])
-        j = (ord(position[1])-65)
-        if color == "white":
-            self.board[i][j] = "W"
+    def placePiece(self, dest):
+        try:
+            i = int(dest[0])
+            j = (ord(dest[1])-65)
+            if self.board[i][j] == self.blank:
+                self.board[i][j] = self.turn[0]
+                if (self.turn == "White"):
+                    self.turn = "Black"
+                else:
+                    self.turn = "White"
+            else:
+                print("Please select an empty location.\n")  
+        except:
+            print("Input typed incorrectly \nPlease type your destination as such:   5F   \n")
 
-            
-        
 
 def main():
     b = Board()
 
     while (b.isNotFull()):
         b.startGame()
+
         b.printBoard()
-        move = input("Enter the row and column of where you would like to set your piece: ")
-        print()
-        b.placePiece("white", move)
+        move = input("(" + b.turn + ") " + "Enter the row and column of where you would like to set your piece: ")
 
         if move == "exit":
             exit()
         else:
-            continue
+            b.placePiece(move)
     
 if __name__ == "__main__":
     main()
