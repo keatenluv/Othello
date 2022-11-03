@@ -68,7 +68,7 @@ class Board():
         # Iterate through 
         for direction in directions:
             check = [i+direction[0], j+direction[1]]
-            while 0 <= check[0] < self.rows-1 and 0 <= check[1] < self.rows-1 and self.board[check[0]][check[1]] == self.opposite()[0]:
+            while 0 <= check[0] < self.rows and 0 <= check[1] < self.rows and self.board[check[0]][check[1]] == self.opposite()[0]:
                 check[0] += direction[0]
                 check[1] += direction[1]
                 if self.board[check[0]][check[1]] == self.turn[0]:
