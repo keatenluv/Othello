@@ -6,6 +6,7 @@
 # well as Mini-Max algorithim with aplha-beta pruning.
 ###############################################################
 
+
 # All possible directions
 directions = [
     (0, -1),
@@ -20,7 +21,7 @@ directions = [
 
 # Class for the board
 # Can print the current state of board, determine if the board is full.
-class Board():
+class Othello():
 
     # Initalize the board with 8 rows and 8 columns. Also fills the board with X's
     def __init__(self):
@@ -92,10 +93,14 @@ class Board():
                             break
                         check[0] += direction[0]
                         check[1] += direction[1]
-                if (self.turn == "White"):
-                    self.turn = "Black"
+                if self.check_move_exists:
+                    if (self.turn == "White"):
+                        self.turn = "Black"
+                    else:
+                        self.turn = "White"
                 else:
-                    self.turn = "White"
+                    print("No moves exists it remains", self.turn, "s Turn." )
+                    
         except:
             print("Input typed incorrectly \nPlease type your destination as such:   5F   \n")
 
@@ -106,18 +111,24 @@ class Board():
             check[0] += direction[0]
             check[1] += direction[1]
 
+    def check_move_exists(self):
+        for i in range(len(self.board)):
+            for j in range(len(self.board[i])):
+                if self.checkValid(i, j):
+                    return True
+        return False
+
 
 
 
 def main():
-    b = Board()
+    b = Othello()
     b.startGame()
 
     while (b.isNotFull()):
-
         b.printBoard()
         move = input("(" + b.turn + ") " + "Enter the row and column of where you would like to set your piece: ")
-
+        
         if move == "exit":
             exit()
         else:
@@ -139,5 +150,5 @@ def main():
     else:
         print("Tie! Nobody Wins!")
     
-if __name__ == "__main__":
-    main()
+#if __name__ == "__main__":
+    #main()
