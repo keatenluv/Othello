@@ -71,38 +71,16 @@ class Othello():
 
         return moves
 
+    def changePlayer(self):
+        if (self.turn == "White"):
+            self.turn = "Black"
+        else:
+            self.turn = "White"
+
     def onBoard(i, j):
-        return x>=0 and x<=7 and y>=0 and y <=7
+        return i>=0 and i<=7 and j>=0 and j <=7
 
     def checkValid(self, i, j):
-        if self.board[i][j] != self.blank or not onBoard(i, j):
-            return False
-        
-        self.board[i][j] = self.turn[0]
-
-        for direction in directions:
-            x, y = i, j
-            x += direction[0]
-            y += direction[1]
-            if onBoard(x, y) and self.board[x][y] == self.opposite()[0]:
-                x += direction[0]
-                y += direction[1]
-                if not onBoard(x, y):
-                    continue
-                while self.board[0][1] == self.opposite()[0]:
-                    x += direction[0]
-                    y += direction[1]
-                    if not onBoard(x, y):
-                        break
-                if not onBoard(x, y):
-                    continue
-                if board(x, y):
-                    continue
-                if board[x][y] == self.turn[0]:
-                    
-
-
-    """def checkValid(self, i, j):
         # Check if desired position is empty
         if self.board[i][j] != self.blank: 
             return False
@@ -110,14 +88,14 @@ class Othello():
         # Iterate through all possible directions
         for direction in directions:
             check = [i+direction[0], j+direction[1]]
-            #print("Checking ", check, ' which evaluates to: ', 0 <= check[0] < self.rows and 0 <= check[1] < self.rows)
-            while (0 <= check[0] < self.rows - 1 and 0 <= check[1] < self.rows - 1 and self.board[check[0]][check[1]] == self.opposite()[0]):
-                print(check[0], check[1])
+
+            while (0 <= check[0] < self.rows and 0 <= check[1] < self.rows and self.board[check[0]][check[1]] == self.opposite()[0]):
                 check[0] += direction[0]
                 check[1] += direction[1]
-                if self.board[check[0]][check[1]] == self.turn[0]:
-                    return True
-        return False"""
+                if (0 <= check[0] < self.rows and 0 <= check[1] < self.rows):
+                    if self.board[check[0]][check[1]] == self.turn[0]:
+                        return True
+        return False
 
     # Place the users piece on the board
     def placePiece(self, dest):
@@ -136,13 +114,12 @@ class Othello():
                             break
                         check[0] += direction[0]
                         check[1] += direction[1]
-                if self.check_move_exists:
-                    if (self.turn == "White"):
-                        self.turn = "Black"
-                    else:
-                        self.turn = "White"
-                else:
+                
+                self.changePlayer()
+                if len(self.allValidMoves()) == 0:
+                    self.changePlayer()
                     print("No moves exists it remains", self.turn, "s Turn." )
+                    
                     
         except:
             print("Input typed incorrectly \nPlease type your destination as such:   5F   \n")
