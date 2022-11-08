@@ -60,21 +60,64 @@ class Othello():
     def opposite(self):
         return "White" if self.turn == "Black" else "Black"
 
+    def allValidMoves(self):
+        moves = []
+
+        for i in range(8):
+            for j in range(8):
+                if self.checkValid(i, j):
+                    move = [i, chr(j+65)]
+                    moves.append(move)
+
+        return moves
+
+    def onBoard(i, j):
+        return x>=0 and x<=7 and y>=0 and y <=7
+
     def checkValid(self, i, j):
-        # Check if desired position is empty
-        if self.board[i][j] != self.blank: 
-            print("\nPlease select an empty location\n")
+        if self.board[i][j] != self.blank or not onBoard(i, j):
             return False
         
-        # Iterate through 
+        self.board[i][j] = self.turn[0]
+
+        for direction in directions:
+            x, y = i, j
+            x += direction[0]
+            y += direction[1]
+            if onBoard(x, y) and self.board[x][y] == self.opposite()[0]:
+                x += direction[0]
+                y += direction[1]
+                if not onBoard(x, y):
+                    continue
+                while self.board[0][1] == self.opposite()[0]:
+                    x += direction[0]
+                    y += direction[1]
+                    if not onBoard(x, y):
+                        break
+                if not onBoard(x, y):
+                    continue
+                if board(x, y):
+                    continue
+                if board[x][y] == self.turn[0]:
+                    
+
+
+    """def checkValid(self, i, j):
+        # Check if desired position is empty
+        if self.board[i][j] != self.blank: 
+            return False
+        
+        # Iterate through all possible directions
         for direction in directions:
             check = [i+direction[0], j+direction[1]]
-            while 0 <= check[0] < self.rows and 0 <= check[1] < self.rows and self.board[check[0]][check[1]] == self.opposite()[0]:
+            #print("Checking ", check, ' which evaluates to: ', 0 <= check[0] < self.rows and 0 <= check[1] < self.rows)
+            while (0 <= check[0] < self.rows - 1 and 0 <= check[1] < self.rows - 1 and self.board[check[0]][check[1]] == self.opposite()[0]):
+                print(check[0], check[1])
                 check[0] += direction[0]
                 check[1] += direction[1]
                 if self.board[check[0]][check[1]] == self.turn[0]:
                     return True
-        return False
+        return False"""
 
     # Place the users piece on the board
     def placePiece(self, dest):
@@ -127,6 +170,7 @@ def main():
 
     while (b.isNotFull()):
         b.printBoard()
+        print(b.allValidMoves())
         move = input("(" + b.turn + ") " + "Enter the row and column of where you would like to set your piece: ")
         
         if move == "exit":
@@ -150,5 +194,5 @@ def main():
     else:
         print("Tie! Nobody Wins!")
     
-#if __name__ == "__main__":
-    #main()
+if __name__ == "__main__":
+    main()
