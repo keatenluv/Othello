@@ -19,8 +19,8 @@ directions = [
     (-1, -1),
 ]
 
-# Class for the board
-# Can print the current state of board, determine if the board is full.
+# Class for the game of Othello
+# Can print the current state of board, determine if the board is full
 class Othello():
 
     # Initalize the board with 8 rows and 8 columns. Also fills the board with X's
@@ -30,6 +30,10 @@ class Othello():
         self.blank = "."
         self.board = [[self.blank for i in range(self.columns)] for j in range(self.rows)]
         self.turn = "Black"
+        self.board[3][4] = "B"
+        self.board[4][3] = "B"
+        self.board[3][3] = "W"
+        self.board[4][4] = "W"
         
     # Prints the current state of the board
     def printBoard(self):
@@ -39,13 +43,6 @@ class Othello():
             for jdx, j in enumerate(i):
                 print(j, end="  ")
             print()
-
-    # Sets the starting pieces
-    def startGame(self):
-        self.board[3][4] = "B"
-        self.board[4][3] = "B"
-        self.board[3][3] = "W"
-        self.board[4][4] = "W"
 
     # Checks if board is full. Reutrns false is full. True otherwise
     def isNotFull(self):
@@ -57,9 +54,11 @@ class Othello():
                     continue
         return False
 
+    # Returns opposite player color
     def opposite(self):
         return "White" if self.turn == "Black" else "Black"
 
+    # Finds all valid moves for current player
     def allValidMoves(self):
         moves = []
 
@@ -71,14 +70,16 @@ class Othello():
 
         return moves
 
+    # changes whos turn it is
     def changePlayer(self):
         if (self.turn == "White"):
             self.turn = "Black"
         else:
             self.turn = "White"
 
-    def onBoard(i, j):
-        return i>=0 and i<=7 and j>=0 and j <=7
+    # Given list for x and y. Check if x, y land on the board
+    def onBoard(self, check):
+        return 0 <= check[0] < self.rows and 0 <= check[1] < self.rows
 
     def checkValid(self, i, j):
         # Check if desired position is empty
@@ -89,10 +90,13 @@ class Othello():
         for direction in directions:
             check = [i+direction[0], j+direction[1]]
 
-            while (0 <= check[0] < self.rows and 0 <= check[1] < self.rows and self.board[check[0]][check[1]] == self.opposite()[0]):
+            # While place being checked is on the board and is the opposite piece
+            while (self.onBoard(check) and self.board[check[0]][check[1]] == self.opposite()[0]):
+
+                # move to next spot and check if same color piece exists
                 check[0] += direction[0]
                 check[1] += direction[1]
-                if (0 <= check[0] < self.rows and 0 <= check[1] < self.rows):
+                if (self.onBoard(check)):
                     if self.board[check[0]][check[1]] == self.turn[0]:
                         return True
         return False
@@ -119,11 +123,10 @@ class Othello():
                 if len(self.allValidMoves()) == 0:
                     self.changePlayer()
                     print("No moves exists it remains", self.turn, "s Turn." )
-                    
-                    
         except:
             print("Input typed incorrectly \nPlease type your destination as such:   5F   \n")
 
+    # Flips necessary pieces
     def flip(self, direction, i, j):
         check = [i+direction[0], j+direction[1]]
         while (self.board[check[0]][check[1]] == self.opposite()[0]):
@@ -131,19 +134,10 @@ class Othello():
             check[0] += direction[0]
             check[1] += direction[1]
 
-    def check_move_exists(self):
-        for i in range(len(self.board)):
-            for j in range(len(self.board[i])):
-                if self.checkValid(i, j):
-                    return True
-        return False
-
-
 
 
 def main():
     b = Othello()
-    b.startGame()
 
     while (b.isNotFull()):
         b.printBoard()
@@ -170,6 +164,8 @@ def main():
         print("White Wins!")
     else:
         print("Tie! Nobody Wins!")
+
+    b.printBoard()
     
 if __name__ == "__main__":
     main()
