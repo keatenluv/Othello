@@ -78,18 +78,16 @@ def controllerBot():
             for idx, i in enumerate(b.allValidMoves()):
                 boardCopy = copy.deepcopy(b)
                 boardCopy.placePiece(i)
-                moves.append(minimax(i, depthSearch-1, boardCopy, b.turn, -math.inf, math.inf))
+                moves.append(minimax(i, depthSearch, boardCopy, b.turn, -math.inf, math.inf))
 
             # Find best move
             bestMove = np.max(moves)
-            print(moves)
             for idx, i in enumerate((moves)):
                 if i == bestMove:
-                    print("\n Best move is ", i), bestMove
+                    print("\nBest move is ", b.allValidMoves()[idx])
+                    print("Total States searched:", count)
                     b.placePiece(b.allValidMoves()[idx])
                     break
-            if DEBUG:
-                print("Total States searched:", count)
     
     # End game processing
     b.printBoard()
@@ -111,7 +109,7 @@ def minimax(position, depth, boardCopy, botColor, alpha, beta):
         return(heuristic(boardCopy, position))
     
     # Max
-    if (boardCopy.turn == botColor):
+    if (boardCopy.turn != botColor):
         maxEval = -math.inf
         for idx, i in enumerate(boardCopy.allValidMoves()):
             bCopy = copy.deepcopy(boardCopy)
@@ -139,7 +137,7 @@ def minimax(position, depth, boardCopy, botColor, alpha, beta):
         return minEval
 
 # Heuristic function
-def heuristic(board, botColor):
+def heuristic(board, position):
     # Total heuristic value
     weight = 0
 
@@ -152,19 +150,17 @@ def heuristic(board, botColor):
     # Edge position heuristic
     for i in range(7):
         if board.board[i][0] == board.turn[0] or board.board[0][i] == board.turn[0] or board.board[6][i] == board.turn[0] or board.board[i][6] == board.turn[0]:
-            weight += 10
+            weight += 30
         elif board.board[i][0] == board.opposite()[0] or board.board[0][i] == board.opposite()[0] or board.board[6][i] == board.opposite()[0] or board.board[i][6] == board.opposite()[0]:
-            weight -= 30
+            weight -= 20
     
     # Corner position heuristic
     if board.board[0][0] == board.turn[0] or board.board[0][6] == board.turn[0] or board.board[6][0] == board.turn[0] or board.board[6][6] == board.turn[0]:
-        print("True")
-        weight += 50
+        weight += 200
     elif board.board[0][0] == board.opposite()[0] or board.board[0][6] == board.opposite()[0] or board.board[6][0] == board.opposite()[0] or board.board[6][6] == board.opposite()[0]:
-        weight -= 20
-
-
-    
+        weight -= 50
+    if DEBUG:
+        print("Considering", position, "with weight")
     return weight
 
 def controller():
@@ -174,7 +170,8 @@ def controller():
         userMove(b)         
 
 def main():
-    print("Welcome to an Intelligent Othello Player")
+    print("\n\nWelcome to an Intelligent Othello Player")
+    time.sleep(1)
     bot = input("Would you like to play against a bot? (y/n): ")
     while bot != "y" and bot != "n":
         print("Input not recognized.\n")

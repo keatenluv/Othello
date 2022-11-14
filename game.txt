@@ -1,0 +1,951 @@
+C:\Users\lovek\OneDrive\Desktop\School\CSC 475\Othello\Othello-A->python3 controller.py
+
+
+Welcome to an Intelligent Othello Player
+Would you like to play against a bot? (y/n): y
+What would you like the search depth to be? 4
+What color would you like to play as? Black
+
+   A  B  C  D  E  F  G  H
+0  .  .  .  .  .  .  .  .
+1  .  .  .  .  .  .  .  .
+2  .  .  .  .  .  .  .  .
+3  .  .  .  W  B  .  .  .
+4  .  .  .  B  W  .  .  .
+5  .  .  .  .  .  .  .  .
+6  .  .  .  .  .  .  .  .
+7  .  .  .  .  .  .  .  .
+
+White = 2 Black = 2
+
+(Black) Enter the row and column of where you would like to set your piece: 3C
+   A  B  C  D  E  F  G  H
+0  .  .  .  .  .  .  .  .
+1  .  .  .  .  .  .  .  .
+2  .  .  .  .  .  .  .  .
+3  .  .  B  B  B  .  .  .
+4  .  .  .  B  W  .  .  .
+5  .  .  .  .  .  .  .  .
+6  .  .  .  .  .  .  .  .
+7  .  .  .  .  .  .  .  .
+
+White = 1 Black = 4
+
+Preforming Minimax to find best move
+
+
+Best move is  [2, 'C']
+Total States searched: 432
+   A  B  C  D  E  F  G  H
+0  .  .  .  .  .  .  .  .
+1  .  .  .  .  .  .  .  .
+2  .  .  W  .  .  .  .  .
+3  .  .  B  W  B  .  .  .
+4  .  .  .  B  W  .  .  .
+5  .  .  .  .  .  .  .  .
+6  .  .  .  .  .  .  .  .
+7  .  .  .  .  .  .  .  .
+
+White = 3 Black = 3
+
+(Black) Enter the row and column of where you would like to set your piece: 2D
+   A  B  C  D  E  F  G  H
+0  .  .  .  .  .  .  .  .
+1  .  .  .  .  .  .  .  .
+2  .  .  W  B  .  .  .  .
+3  .  .  B  B  B  .  .  .
+4  .  .  .  B  W  .  .  .
+5  .  .  .  .  .  .  .  .
+6  .  .  .  .  .  .  .  .
+7  .  .  .  .  .  .  .  .
+
+White = 2 Black = 5
+
+Preforming Minimax to find best move
+
+
+Best move is  [2, 'E']
+Total States searched: 754
+   A  B  C  D  E  F  G  H
+0  .  .  .  .  .  .  .  .
+1  .  .  .  .  .  .  .  .
+2  .  .  W  W  W  .  .  .
+3  .  .  B  B  W  .  .  .
+4  .  .  .  B  W  .  .  .
+5  .  .  .  .  .  .  .  .
+6  .  .  .  .  .  .  .  .
+7  .  .  .  .  .  .  .  .
+
+White = 5 Black = 3
+
+(Black) Enter the row and column of where you would like to set your piece: 1F
+   A  B  C  D  E  F  G  H
+0  .  .  .  .  .  .  .  .
+1  .  .  .  .  .  B  .  .
+2  .  .  W  W  B  .  .  .
+3  .  .  B  B  W  .  .  .
+4  .  .  .  B  W  .  .  .
+5  .  .  .  .  .  .  .  .
+6  .  .  .  .  .  .  .  .
+7  .  .  .  .  .  .  .  .
+
+White = 4 Black = 5
+
+Preforming Minimax to find best move
+
+
+Best move is  [1, 'E']
+Total States searched: 2941
+   A  B  C  D  E  F  G  H
+0  .  .  .  .  .  .  .  .
+1  .  .  .  .  W  B  .  .
+2  .  .  W  W  W  .  .  .
+3  .  .  B  B  W  .  .  .
+4  .  .  .  B  W  .  .  .
+5  .  .  .  .  .  .  .  .
+6  .  .  .  .  .  .  .  .
+7  .  .  .  .  .  .  .  .
+
+White = 6 Black = 4
+
+(Black) Enter the row and column of where you would like to set your piece: 1D
+   A  B  C  D  E  F  G  H
+0  .  .  .  .  .  .  .  .
+1  .  .  .  B  B  B  .  .
+2  .  .  W  B  W  .  .  .
+3  .  .  B  B  W  .  .  .
+4  .  .  .  B  W  .  .  .
+5  .  .  .  .  .  .  .  .
+6  .  .  .  .  .  .  .  .
+7  .  .  .  .  .  .  .  .
+
+White = 4 Black = 7
+
+Preforming Minimax to find best move
+
+
+Best move is  [0, 'E']
+Total States searched: 5396
+   A  B  C  D  E  F  G  H
+0  .  .  .  .  W  .  .  .
+1  .  .  .  W  W  B  .  .
+2  .  .  W  B  W  .  .  .
+3  .  .  B  B  W  .  .  .
+4  .  .  .  B  W  .  .  .
+5  .  .  .  .  .  .  .  .
+6  .  .  .  .  .  .  .  .
+7  .  .  .  .  .  .  .  .
+
+White = 7 Black = 5
+
+(Black) Enter the row and column of where you would like to set your piece: 1C
+   A  B  C  D  E  F  G  H
+0  .  .  .  .  W  .  .  .
+1  .  .  B  B  B  B  .  .
+2  .  .  B  B  W  .  .  .
+3  .  .  B  B  W  .  .  .
+4  .  .  .  B  W  .  .  .
+5  .  .  .  .  .  .  .  .
+6  .  .  .  .  .  .  .  .
+7  .  .  .  .  .  .  .  .
+
+White = 4 Black = 9
+
+Preforming Minimax to find best move
+
+
+Best move is  [2, 'G']
+Total States searched: 4365
+   A  B  C  D  E  F  G  H
+0  .  .  .  .  W  .  .  .
+1  .  .  B  B  B  W  .  .
+2  .  .  B  B  W  .  W  .
+3  .  .  B  B  W  .  .  .
+4  .  .  .  B  W  .  .  .
+5  .  .  .  .  .  .  .  .
+6  .  .  .  .  .  .  .  .
+7  .  .  .  .  .  .  .  .
+
+White = 6 Black = 8
+
+(Black) Enter the row and column of where you would like to set your piece: 5E
+   A  B  C  D  E  F  G  H
+0  .  .  .  .  W  .  .  .
+1  .  .  B  B  B  W  .  .
+2  .  .  B  B  B  .  W  .
+3  .  .  B  B  B  .  .  .
+4  .  .  .  B  B  .  .  .
+5  .  .  .  .  B  .  .  .
+6  .  .  .  .  .  .  .  .
+7  .  .  .  .  .  .  .  .
+
+White = 3 Black = 12
+
+Preforming Minimax to find best move
+
+
+Best move is  [6, 'E']
+Total States searched: 1648
+   A  B  C  D  E  F  G  H
+0  .  .  .  .  W  .  .  .
+1  .  .  B  B  W  W  .  .
+2  .  .  B  B  W  .  W  .
+3  .  .  B  B  W  .  .  .
+4  .  .  .  B  W  .  .  .
+5  .  .  .  .  W  .  .  .
+6  .  .  .  .  W  .  .  .
+7  .  .  .  .  .  .  .  .
+
+White = 9 Black = 7
+
+(Black) Enter the row and column of where you would like to set your piece: 6F
+   A  B  C  D  E  F  G  H
+0  .  .  .  .  W  .  .  .
+1  .  .  B  B  W  W  .  .
+2  .  .  B  B  W  .  W  .
+3  .  .  B  B  W  .  .  .
+4  .  .  .  B  W  .  .  .
+5  .  .  .  .  B  .  .  .
+6  .  .  .  .  W  B  .  .
+7  .  .  .  .  .  .  .  .
+
+White = 8 Black = 9
+
+Preforming Minimax to find best move
+
+
+Best move is  [0, 'C']
+Total States searched: 13905
+   A  B  C  D  E  F  G  H
+0  .  .  W  .  W  .  .  .
+1  .  .  B  W  W  W  .  .
+2  .  .  B  B  W  .  W  .
+3  .  .  B  B  W  .  .  .
+4  .  .  .  B  W  .  .  .
+5  .  .  .  .  B  .  .  .
+6  .  .  .  .  W  B  .  .
+7  .  .  .  .  .  .  .  .
+
+White = 10 Black = 8
+
+(Black) Enter the row and column of where you would like to set your piece: 0D
+   A  B  C  D  E  F  G  H
+0  .  .  W  B  W  .  .  .
+1  .  .  B  B  W  W  .  .
+2  .  .  B  B  W  .  W  .
+3  .  .  B  B  W  .  .  .
+4  .  .  .  B  W  .  .  .
+5  .  .  .  .  B  .  .  .
+6  .  .  .  .  W  B  .  .
+7  .  .  .  .  .  .  .  .
+
+White = 9 Black = 10
+
+Preforming Minimax to find best move
+
+
+Best move is  [0, 'B']
+Total States searched: 11436
+   A  B  C  D  E  F  G  H
+0  .  W  W  B  W  .  .  .
+1  .  .  W  B  W  W  .  .
+2  .  .  B  W  W  .  W  .
+3  .  .  B  B  W  .  .  .
+4  .  .  .  B  W  .  .  .
+5  .  .  .  .  B  .  .  .
+6  .  .  .  .  W  B  .  .
+7  .  .  .  .  .  .  .  .
+
+White = 12 Black = 8
+
+(Black) Enter the row and column of where you would like to set your piece: 0A
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  W  .  .  .
+1  .  .  W  B  W  W  .  .
+2  .  .  B  W  W  .  W  .
+3  .  .  B  B  W  .  .  .
+4  .  .  .  B  W  .  .  .
+5  .  .  .  .  B  .  .  .
+6  .  .  .  .  W  B  .  .
+7  .  .  .  .  .  .  .  .
+
+White = 10 Black = 11
+
+Preforming Minimax to find best move
+
+
+Best move is  [1, 'B']
+Total States searched: 13421
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  W  .  .  .
+1  .  W  W  B  W  W  .  .
+2  .  .  W  W  W  .  W  .
+3  .  .  B  W  W  .  .  .
+4  .  .  .  B  W  .  .  .
+5  .  .  .  .  B  .  .  .
+6  .  .  .  .  W  B  .  .
+7  .  .  .  .  .  .  .  .
+
+White = 13 Black = 9
+
+(Black) Enter the row and column of where you would like to set your piece: 1A
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  W  .  .  .
+1  B  B  B  B  W  W  .  .
+2  .  .  W  W  W  .  W  .
+3  .  .  B  W  W  .  .  .
+4  .  .  .  B  W  .  .  .
+5  .  .  .  .  B  .  .  .
+6  .  .  .  .  W  B  .  .
+7  .  .  .  .  .  .  .  .
+
+White = 11 Black = 12
+
+Preforming Minimax to find best move
+
+
+Best move is  [4, 'C']
+Total States searched: 6367
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  W  .  .  .
+1  B  B  B  B  W  W  .  .
+2  .  .  W  W  W  .  W  .
+3  .  .  W  W  W  .  .  .
+4  .  .  W  W  W  .  .  .
+5  .  .  .  .  B  .  .  .
+6  .  .  .  .  W  B  .  .
+7  .  .  .  .  .  .  .  .
+
+White = 14 Black = 10
+
+(Black) Enter the row and column of where you would like to set your piece: 5D
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  W  .  .  .
+1  B  B  B  B  W  W  .  .
+2  .  .  W  B  W  .  W  .
+3  .  .  W  B  W  .  .  .
+4  .  .  W  B  W  .  .  .
+5  .  .  .  B  B  .  .  .
+6  .  .  .  .  W  B  .  .
+7  .  .  .  .  .  .  .  .
+
+White = 11 Black = 14
+
+Preforming Minimax to find best move
+
+
+Best move is  [7, 'G']
+Total States searched: 6130
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  W  .  .  .
+1  B  B  B  B  W  W  .  .
+2  .  .  W  B  W  .  W  .
+3  .  .  W  B  W  .  .  .
+4  .  .  W  W  W  .  .  .
+5  .  .  .  B  W  .  .  .
+6  .  .  .  .  W  W  .  .
+7  .  .  .  .  .  .  W  .
+
+White = 15 Black = 11
+
+(Black) Enter the row and column of where you would like to set your piece: 0F
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  .  .
+1  B  B  B  B  B  W  .  .
+2  .  .  W  B  W  .  W  .
+3  .  .  W  B  W  .  .  .
+4  .  .  W  W  W  .  .  .
+5  .  .  .  B  W  .  .  .
+6  .  .  .  .  W  W  .  .
+7  .  .  .  .  .  .  W  .
+
+White = 13 Black = 14
+
+Preforming Minimax to find best move
+
+
+Best move is  [5, 'C']
+Total States searched: 2761
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  .  .
+1  B  B  B  B  B  W  .  .
+2  .  .  W  B  W  .  W  .
+3  .  .  W  B  W  .  .  .
+4  .  .  W  W  W  .  .  .
+5  .  .  W  W  W  .  .  .
+6  .  .  .  .  W  W  .  .
+7  .  .  .  .  .  .  W  .
+
+White = 15 Black = 13
+
+(Black) Enter the row and column of where you would like to set your piece: 0G
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  .
+1  B  B  B  B  B  B  .  .
+2  .  .  W  B  B  .  W  .
+3  .  .  W  B  W  .  .  .
+4  .  .  W  W  W  .  .  .
+5  .  .  W  W  W  .  .  .
+6  .  .  .  .  W  W  .  .
+7  .  .  .  .  .  .  W  .
+
+White = 13 Black = 16
+
+Preforming Minimax to find best move
+
+
+Best move is  [2, 'F']
+Total States searched: 636
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  .
+1  B  B  B  B  B  B  .  .
+2  .  .  W  W  W  W  W  .
+3  .  .  W  B  W  .  .  .
+4  .  .  W  W  W  .  .  .
+5  .  .  W  W  W  .  .  .
+6  .  .  .  .  W  W  .  .
+7  .  .  .  .  .  .  W  .
+
+White = 16 Black = 14
+
+(Black) Enter the row and column of where you would like to set your piece: 3B
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  .
+1  B  B  B  B  B  B  .  .
+2  .  .  B  W  W  W  W  .
+3  .  B  B  B  W  .  .  .
+4  .  .  W  W  W  .  .  .
+5  .  .  W  W  W  .  .  .
+6  .  .  .  .  W  W  .  .
+7  .  .  .  .  .  .  W  .
+
+White = 14 Black = 17
+
+Preforming Minimax to find best move
+
+
+Best move is  [3, 'A']
+Total States searched: 3836
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  .
+1  B  B  B  B  B  B  .  .
+2  .  .  B  W  W  W  W  .
+3  W  W  W  W  W  .  .  .
+4  .  .  W  W  W  .  .  .
+5  .  .  W  W  W  .  .  .
+6  .  .  .  .  W  W  .  .
+7  .  .  .  .  .  .  W  .
+
+White = 18 Black = 14
+
+(Black) Enter the row and column of where you would like to set your piece: 6D
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  .
+1  B  B  B  B  B  B  .  .
+2  .  .  B  B  W  W  W  .
+3  W  W  W  B  W  .  .  .
+4  .  .  W  B  W  .  .  .
+5  .  .  W  B  W  .  .  .
+6  .  .  .  B  W  W  .  .
+7  .  .  .  .  .  .  W  .
+
+White = 14 Black = 19
+
+Preforming Minimax to find best move
+
+
+Best move is  [6, 'C']
+Total States searched: 8576
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  .
+1  B  B  B  B  B  B  .  .
+2  .  .  B  B  W  W  W  .
+3  W  W  W  B  W  .  .  .
+4  .  .  W  B  W  .  .  .
+5  .  .  W  W  W  .  .  .
+6  .  .  W  W  W  W  .  .
+7  .  .  .  .  .  .  W  .
+
+White = 17 Black = 17
+
+(Black) Enter the row and column of where you would like to set your piece: 7D
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  .
+1  B  B  B  B  B  B  .  .
+2  .  .  B  B  W  W  W  .
+3  W  W  W  B  W  .  .  .
+4  .  .  W  B  W  .  .  .
+5  .  .  W  B  W  .  .  .
+6  .  .  W  B  W  W  .  .
+7  .  .  .  B  .  .  W  .
+
+White = 15 Black = 20
+
+Preforming Minimax to find best move
+
+
+Best move is  [2, 'B']
+Total States searched: 6823
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  .
+1  B  B  B  B  B  B  .  .
+2  .  W  W  W  W  W  W  .
+3  W  W  W  B  W  .  .  .
+4  .  .  W  B  W  .  .  .
+5  .  .  W  B  W  .  .  .
+6  .  .  W  B  W  W  .  .
+7  .  .  .  B  .  .  W  .
+
+White = 18 Black = 18
+
+(Black) Enter the row and column of where you would like to set your piece: 5F
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  .
+1  B  B  B  B  B  B  .  .
+2  .  W  W  W  W  W  W  .
+3  W  W  W  B  W  .  .  .
+4  .  .  W  B  B  .  .  .
+5  .  .  W  B  B  B  .  .
+6  .  .  W  B  B  W  .  .
+7  .  .  .  B  .  .  W  .
+
+White = 15 Black = 22
+
+Preforming Minimax to find best move
+
+
+Best move is  [4, 'F']
+Total States searched: 10827
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  .
+1  B  B  B  B  B  B  .  .
+2  .  W  W  W  W  W  W  .
+3  W  W  W  B  W  .  .  .
+4  .  .  W  W  W  W  .  .
+5  .  .  W  B  B  W  .  .
+6  .  .  W  B  B  W  .  .
+7  .  .  .  B  .  .  W  .
+
+White = 19 Black = 19
+
+(Black) Enter the row and column of where you would like to set your piece: 2A
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  .
+1  B  B  B  B  B  B  .  .
+2  B  W  W  W  W  W  W  .
+3  W  B  W  B  W  .  .  .
+4  .  .  B  W  W  W  .  .
+5  .  .  W  B  B  W  .  .
+6  .  .  W  B  B  W  .  .
+7  .  .  .  B  .  .  W  .
+
+White = 17 Black = 22
+
+Preforming Minimax to find best move
+
+
+Best move is  [4, 'B']
+Total States searched: 7394
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  .
+1  B  B  B  B  B  B  .  .
+2  B  W  W  W  W  W  W  .
+3  W  W  W  B  W  .  .  .
+4  .  W  W  W  W  W  .  .
+5  .  .  W  B  B  W  .  .
+6  .  .  W  B  B  W  .  .
+7  .  .  .  B  .  .  W  .
+
+White = 20 Black = 20
+
+(Black) Enter the row and column of where you would like to set your piece: 2H
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  .
+1  B  B  B  B  B  B  .  .
+2  B  B  B  B  B  B  B  B
+3  W  W  W  B  W  .  .  .
+4  .  W  W  W  W  W  .  .
+5  .  .  W  B  B  W  .  .
+6  .  .  W  B  B  W  .  .
+7  .  .  .  B  .  .  W  .
+
+White = 14 Black = 27
+
+Preforming Minimax to find best move
+
+
+Best move is  [7, 'F']
+Total States searched: 3115
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  .
+1  B  B  B  B  B  B  .  .
+2  B  B  B  B  B  B  B  B
+3  W  W  W  B  W  .  .  .
+4  .  W  W  W  W  W  .  .
+5  .  .  W  W  B  W  .  .
+6  .  .  W  B  W  W  .  .
+7  .  .  .  B  .  W  W  .
+
+White = 17 Black = 25
+
+(Black) Enter the row and column of where you would like to set your piece: 4A
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  .
+1  B  B  B  B  B  B  .  .
+2  B  B  B  B  B  B  B  B
+3  B  B  W  B  W  .  .  .
+4  B  W  W  W  W  W  .  .
+5  .  .  W  W  B  W  .  .
+6  .  .  W  B  W  W  .  .
+7  .  .  .  B  .  W  W  .
+
+White = 15 Black = 28
+
+Preforming Minimax to find best move
+
+
+Best move is  [7, 'C']
+Total States searched: 2060
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  .
+1  B  B  B  B  B  B  .  .
+2  B  B  B  B  B  B  B  B
+3  B  B  W  B  W  .  .  .
+4  B  W  W  W  W  W  .  .
+5  .  .  W  W  W  W  .  .
+6  .  .  W  W  W  W  .  .
+7  .  .  W  B  .  W  W  .
+
+White = 18 Black = 26
+
+(Black) Enter the row and column of where you would like to set your piece: 4G
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  .
+1  B  B  B  B  B  B  .  .
+2  B  B  B  B  B  B  B  B
+3  B  B  W  B  W  .  .  .
+4  B  B  B  B  B  B  B  .
+5  .  .  W  W  W  B  .  .
+6  .  .  W  W  B  W  .  .
+7  .  .  W  B  .  W  W  .
+
+White = 11 Black = 34
+
+Preforming Minimax to find best move
+
+
+Best move is  [3, 'F']
+Total States searched: 3085
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  .
+1  B  B  B  B  B  B  .  .
+2  B  B  B  B  B  B  B  B
+3  B  B  W  B  W  W  .  .
+4  B  B  B  B  W  W  B  .
+5  .  .  W  W  W  W  .  .
+6  .  .  W  W  B  W  .  .
+7  .  .  W  B  .  W  W  .
+
+White = 15 Black = 31
+
+(Black) Enter the row and column of where you would like to set your piece: 3G
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  .
+1  B  B  B  B  B  B  .  .
+2  B  B  B  B  B  B  B  B
+3  B  B  W  B  B  B  B  .
+4  B  B  B  B  W  W  B  .
+5  .  .  W  W  W  W  .  .
+6  .  .  W  W  B  W  .  .
+7  .  .  W  B  .  W  W  .
+
+White = 13 Black = 34
+
+Preforming Minimax to find best move
+
+
+Best move is  [3, 'H']
+Total States searched: 3899
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  .
+1  B  B  B  B  B  B  .  .
+2  B  B  B  B  B  B  B  B
+3  B  B  W  W  W  W  W  W
+4  B  B  B  B  W  W  W  .
+5  .  .  W  W  W  W  .  .
+6  .  .  W  W  B  W  .  .
+7  .  .  W  B  .  W  W  .
+
+White = 19 Black = 29
+
+(Black) Enter the row and column of where you would like to set your piece: 4H
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  .
+1  B  B  B  B  B  B  .  .
+2  B  B  B  B  B  B  B  B
+3  B  B  W  W  W  W  B  B
+4  B  B  B  B  B  B  B  B
+5  .  .  W  W  W  W  .  .
+6  .  .  W  W  B  W  .  .
+7  .  .  W  B  .  W  W  .
+
+White = 14 Black = 35
+
+Preforming Minimax to find best move
+
+
+Best move is  [1, 'G']
+Total States searched: 2414
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  .
+1  B  B  B  B  B  B  W  .
+2  B  B  B  B  B  W  B  B
+3  B  B  W  W  W  W  B  B
+4  B  B  B  B  B  B  B  B
+5  .  .  W  W  W  W  .  .
+6  .  .  W  W  B  W  .  .
+7  .  .  W  B  .  W  W  .
+
+White = 16 Black = 34
+
+(Black) Enter the row and column of where you would like to set your piece: 0H
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  B
+1  B  B  B  B  B  B  B  .
+2  B  B  B  B  B  B  B  B
+3  B  B  W  W  B  W  B  B
+4  B  B  B  B  B  B  B  B
+5  .  .  W  W  W  W  .  .
+6  .  .  W  W  B  W  .  .
+7  .  .  W  B  .  W  W  .
+
+White = 13 Black = 38
+
+Preforming Minimax to find best move
+
+
+Best move is  [5, 'H']
+Total States searched: 1179
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  B
+1  B  B  B  B  B  B  B  .
+2  B  B  B  B  B  B  B  B
+3  B  B  W  W  B  W  B  B
+4  B  B  B  B  B  B  W  B
+5  .  .  W  W  W  W  .  W
+6  .  .  W  W  B  W  .  .
+7  .  .  W  B  .  W  W  .
+
+White = 15 Black = 37
+
+(Black) Enter the row and column of where you would like to set your piece: 6H
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  B
+1  B  B  B  B  B  B  B  .
+2  B  B  B  B  B  B  B  B
+3  B  B  W  W  B  W  B  B
+4  B  B  B  B  B  B  W  B
+5  .  .  W  W  W  W  .  B
+6  .  .  W  W  B  W  .  B
+7  .  .  W  B  .  W  W  .
+
+White = 14 Black = 39
+
+Preforming Minimax to find best move
+
+
+Best move is  [7, 'E']
+Total States searched: 835
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  B
+1  B  B  B  B  B  B  B  .
+2  B  B  B  B  B  B  B  B
+3  B  B  W  W  B  W  B  B
+4  B  B  B  B  B  B  W  B
+5  .  .  W  W  W  W  .  B
+6  .  .  W  W  W  W  .  B
+7  .  .  W  W  W  W  W  .
+
+White = 17 Black = 37
+
+(Black) Enter the row and column of where you would like to set your piece: 5G
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  B
+1  B  B  B  B  B  B  B  .
+2  B  B  B  B  B  B  B  B
+3  B  B  W  W  B  W  B  B
+4  B  B  B  B  B  B  B  B
+5  .  .  W  W  W  W  B  B
+6  .  .  W  W  W  W  .  B
+7  .  .  W  W  W  W  W  .
+
+White = 16 Black = 39
+
+Preforming Minimax to find best move
+
+
+Best move is  [1, 'H']
+Total States searched: 403
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  B
+1  B  B  B  B  B  B  B  W
+2  B  B  B  B  B  B  W  B
+3  B  B  W  W  B  W  B  B
+4  B  B  B  B  B  B  B  B
+5  .  .  W  W  W  W  B  B
+6  .  .  W  W  W  W  .  B
+7  .  .  W  W  W  W  W  .
+
+White = 18 Black = 38
+
+(Black) Enter the row and column of where you would like to set your piece: 6G
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  B
+1  B  B  B  B  B  B  B  W
+2  B  B  B  B  B  B  W  B
+3  B  B  W  W  B  W  B  B
+4  B  B  B  B  B  B  B  B
+5  .  .  W  W  W  B  B  B
+6  .  .  W  W  W  W  B  B
+7  .  .  W  W  W  W  W  .
+
+White = 17 Black = 40
+
+Preforming Minimax to find best move
+
+
+Best move is  [7, 'H']
+Total States searched: 175
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  B
+1  B  B  B  B  B  B  B  W
+2  B  B  B  B  B  B  W  W
+3  B  B  W  W  B  W  B  W
+4  B  B  B  B  W  B  B  W
+5  .  .  W  W  W  W  B  W
+6  .  .  W  W  W  W  W  W
+7  .  .  W  W  W  W  W  W
+
+White = 26 Black = 32
+
+(Black) Enter the row and column of where you would like to set your piece: 7B
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  B
+1  B  B  B  B  B  B  B  W
+2  B  B  B  B  B  B  W  W
+3  B  B  W  W  B  W  B  W
+4  B  B  B  B  W  B  B  W
+5  .  .  W  W  W  W  B  W
+6  .  .  W  W  W  W  W  W
+7  .  .  W  W  W  W  W  W
+
+White = 26 Black = 32
+
+(Black) Enter the row and column of where you would like to set your piece: 5B
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  B
+1  B  B  B  B  B  B  B  W
+2  B  B  B  B  B  B  W  W
+3  B  B  W  W  B  W  B  W
+4  B  B  B  B  W  B  B  W
+5  .  B  B  B  B  B  B  W
+6  .  .  W  W  W  W  W  W
+7  .  .  W  W  W  W  W  W
+
+White = 22 Black = 37
+
+Preforming Minimax to find best move
+
+
+Best move is  [6, 'A']
+Total States searched: 64
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  B
+1  B  B  B  B  B  B  B  W
+2  B  B  B  B  B  B  W  W
+3  B  B  W  W  B  W  B  W
+4  B  B  W  B  W  B  B  W
+5  .  W  B  B  B  B  B  W
+6  W  .  W  W  W  W  W  W
+7  .  .  W  W  W  W  W  W
+
+White = 25 Black = 35
+
+(Black) Enter the row and column of where you would like to set your piece: 7B
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  B
+1  B  B  B  B  B  B  B  W
+2  B  B  B  B  B  B  W  W
+3  B  B  W  W  B  W  B  W
+4  B  B  W  B  W  B  B  W
+5  .  W  B  B  B  B  B  W
+6  W  .  B  W  W  W  W  W
+7  .  B  W  W  W  W  W  W
+
+White = 24 Black = 37
+
+Preforming Minimax to find best move
+
+
+Best move is  [6, 'B']
+Total States searched: 39
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  B
+1  B  B  B  B  B  B  B  W
+2  B  B  B  B  B  B  W  W
+3  B  B  W  W  B  W  B  W
+4  B  B  W  B  W  B  B  W
+5  .  W  B  B  B  B  B  W
+6  W  W  W  W  W  W  W  W
+7  .  B  W  W  W  W  W  W
+
+White = 26 Black = 36
+
+(Black) Enter the row and column of where you would like to set your piece: 7S
+Input typed incorrectly
+Please type your destination as such:   5F
+
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  B
+1  B  B  B  B  B  B  B  W
+2  B  B  B  B  B  B  W  W
+3  B  B  W  W  B  W  B  W
+4  B  B  W  B  W  B  B  W
+5  .  W  B  B  B  B  B  W
+6  W  W  W  W  W  W  W  W
+7  .  B  W  W  W  W  W  W
+
+White = 26 Black = 36
+
+(Black) Enter the row and column of where you would like to set your piece: 7A
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  B
+1  B  B  B  B  B  B  B  W
+2  B  B  B  B  B  B  W  W
+3  B  B  W  W  B  W  B  W
+4  B  B  W  B  W  B  B  W
+5  .  W  B  B  B  B  B  W
+6  W  B  W  W  W  W  W  W
+7  B  B  W  W  W  W  W  W
+
+White = 25 Black = 38
+
+Preforming Minimax to find best move
+
+
+Best move is  [5, 'A']
+Total States searched: 1
+   A  B  C  D  E  F  G  H
+0  B  B  B  B  B  B  B  B
+1  B  B  B  B  B  B  B  W
+2  B  B  B  B  B  B  W  W
+3  B  B  W  W  B  W  B  W
+4  B  W  W  B  W  B  B  W
+5  W  W  B  B  B  B  B  W
+6  W  W  W  W  W  W  W  W
+7  B  B  W  W  W  W  W  W
+
+White = 28 Black = 36
+
+Black Wins!
+Game Over
