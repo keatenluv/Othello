@@ -171,7 +171,7 @@ def controllerBot():
             for idx, i in enumerate(b.allValidMoves()):
                 boardCopy = copy.deepcopy(b)
                 boardCopy.placePiece(i)
-                moves.append(minimax(i, depthSearch-1, boardCopy, b.turn))
+                moves.append(minimax(i, depthSearch-1, boardCopy, b.turn, -math.inf, math.inf))
             bestMove = np.max(moves)
             for idx, i in enumerate((moves)):
                 if i == bestMove:
@@ -182,21 +182,27 @@ def controllerBot():
     print("Game Over")
 
 
-def minimax(position, depth, boardCopy, botColor):
+def minimax(position, depth, boardCopy, botColor, alpha, beta):
     if (depth == 0 or not boardCopy.isNotFull()):
         return(heuristic(boardCopy))
     
     if (boardCopy.turn == botColor):
         maxEval = -math.inf
         for idx, i in enumerate(boardCopy.allValidMoves()):
-            eval = minimax(i, depth-1, boardCopy, botColor)
+            eval = minimax(i, depth-1, boardCopy, botColor, alpha, beta)
             maxEval = max(maxEval, eval)
+            alpha = max(alpha, eval)
+            if beta <= alpha:
+                break
         return maxEval
     else:
         minEval = math.inf
         for idx, i in enumerate(boardCopy.allValidMoves()):
-            eval = minimax(i, depth-1, boardCopy, botColor)
+            eval = minimax(i, depth-1, boardCopy, botColor, alpha, beta)
             minEval = min(minEval, eval)
+            beta = min(beta, eval)
+            if beta <= alpha:
+                break
         return minEval
 
 def heuristic(board):
