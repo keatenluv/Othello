@@ -5,7 +5,10 @@
 # Description: This program implements the game of Othello as 
 # well as Mini-Max algorithim with aplha-beta pruning.
 ###############################################################
-
+import math
+import numpy as np
+import copy
+import time
 
 # All possible directions
 directions = [
@@ -35,6 +38,17 @@ class Othello():
         self.board[3][3] = "W"
         self.board[4][4] = "W"
         
+    def countPieces(self):
+        totalW = 0
+        totalB = 0
+        for idx, i in enumerate(self.board):
+            for jdx, j in enumerate(i):
+                if j == "W":
+                    totalW += 1
+                elif j == "B":
+                    totalB += 1
+        return[totalW, totalB]
+    
     # Prints the current state of the board
     def printBoard(self):
         print("   A  B  C  D  E  F  G  H")
@@ -43,6 +57,8 @@ class Othello():
             for jdx, j in enumerate(i):
                 print(j, end="  ")
             print()
+        totals = self.countPieces()
+        print("White =",totals[0], "Black =", totals[1])
 
     # Checks if board is full. Reutrns false is full. True otherwise
     def isNotFull(self):
@@ -135,37 +151,82 @@ class Othello():
             check[1] += direction[1]
 
 
+def userMove(b):
+    move = input("(" + b.turn + ") " + "Enter the row and column of where you would like to set your piece: ")
+    if move == "exit":
+        exit()
+    else:
+        b.placePiece(move)
 
-def main():
+def controllerBot():
+    b = Othello()
+    depthSearch = int(input("What would you like the search depth to be? "))
+    userColor = input("What color would you like to play as? ")
+    while (b.isNotFull()):
+        b.printBoard()
+        if userColor == b.turn:
+            userMove(b)
+        else:
+            moves = []
+            for idx, i in enumerate(b.allValidMoves()):
+                boardCopy = copy.deepcopy(b)
+                boardCopy.placePiece(i)
+                moves.append(minimax(i, depthSearch-1, boardCopy, b.turn))
+            bestMove = np.max(moves)
+            for idx, i in enumerate((moves)):
+                if i == bestMove:
+                    b.placePiece(b.allValidMoves()[idx])
+                    break
+
+    b.printBoard()
+    print("Game Over")
+
+
+def minimax(position, depth, boardCopy, botColor):
+    if (depth == 0 or not boardCopy.isNotFull()):
+        return(heuristic(boardCopy))
+    
+    if (boardCopy.turn == botColor):
+        maxEval = -math.inf
+        for idx, i in enumerate(boardCopy.allValidMoves()):
+            eval = minimax(i, depth-1, boardCopy, botColor)
+            maxEval = max(maxEval, eval)
+        return maxEval
+    else:
+        minEval = math.inf
+        for idx, i in enumerate(boardCopy.allValidMoves()):
+            eval = minimax(i, depth-1, boardCopy, botColor)
+            minEval = min(minEval, eval)
+        return minEval
+
+def heuristic(board):
+    if board.turn == "White":
+        return board.countPieces()[1] - board.countPieces()[0]
+    else:
+        return board.countPieces()[0] - board.countPieces()[1]
+
+def controller():
     b = Othello()
 
     while (b.isNotFull()):
         b.printBoard()
-        print(b.allValidMoves())
-        move = input("(" + b.turn + ") " + "Enter the row and column of where you would like to set your piece: ")
-        
-        if move == "exit":
-            exit()
-        else:
-            b.placePiece(move)
+        userMove(b)         
 
-    totalW = 0
-    totalB = 0
-    for idx, i in enumerate(b.board):
-        for jdx, j in enumerate(i):
-            if j == "W":
-                totalW += 1
-            else:
-                totalB += 1
-    
-    if (totalB > totalW):
-        print("Black Wins!")
-    elif (totalW > totalB):
-        print("White Wins!")
+def startGame():
+    print("Welcome to an Intelligent Othello Player")
+    bot = input("Would you like to play against a bot? (y/n): ")
+    while bot != "y" and bot != "n":
+        print("Input not recognized.\n")
+        bot = input("Would you like to play against a bot? (y/n): ")
+    if bot == "y":
+        controllerBot()
     else:
-        print("Tie! Nobody Wins!")
+        controller()
 
-    b.printBoard()
-    
+
+def main():
+    startGame()
+
+
 if __name__ == "__main__":
     main()
