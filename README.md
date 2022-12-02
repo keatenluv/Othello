@@ -8,9 +8,9 @@ Currently, the agent is not very intelligent. It can play the game. However, it 
 By tuning the heuristic function used in minimax the preformance of the agent can be increased. 
 
 The game is ran through the controller.py file in the command line:
-'''
+```
 python3 controller.py
-'''
+```
 
 
 
