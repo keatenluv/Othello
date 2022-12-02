@@ -160,11 +160,11 @@ def heuristic(board, position):
     elif board.board[0][0] == board.opposite()[0] or board.board[0][6] == board.opposite()[0] or board.board[6][0] == board.opposite()[0] or board.board[6][6] == board.opposite()[0]:
         weight -= 50
     if DEBUG:
-        print("Considering", position, "with weight")
+        print("Considering", position, "with weight", weight)
     return weight
 
 def controller():
-    b = Othello()
+    b = Othello.Othello()
     while (b.isNotFull()):
         b.printBoard()
         userMove(b)         
